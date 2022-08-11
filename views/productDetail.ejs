@@ -12,7 +12,7 @@
     <main class="detail__main">
         <section class="detail__main__section general__main__section">
             <article class="detail__main__section__article">
-                <img src="/images/img-phone-01.jpg" alt="">
+                <img src="/images/<%= product.image %>" alt="">
                 <div class="detail__main__section--images">
                     <img src="/images/img-phone-01.jpg" alt="">
                     <img src="/images/img-phone-02.jpg" alt="">
@@ -20,7 +20,17 @@
                 </div>
             </article>
             <div class="detail__main__section--content">
-                <h2>Nombre del producto</h2>
+                <h2><%= product.name %></h2>
+                <div class="d-flex align-items-center gap-2">
+                    <% if (product.discount > 0) { %>
+                        <p>U$S</p><h3><%= (product.price) - (product.price * product.discount / 100) %></h3> <p class="text-decoration-line-through text-danger">u$s<%= product.price %></p>
+                    <% }else{ %>
+                        <p>U$S</p><h3><%= product.price %></h3>
+                    <% } %>
+                </div>
+                <% if (product.discount > 0) { %>
+                    <h4 class="text-success"><%= product.discount %>% OFF</h4>
+                <% } %>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi quia, eius autem veniam accusantium
                     maiores doloribus aliquid possimus quae debitis?</p>
                 <a class="general__button__product " href="">Añadir al carrito</a>

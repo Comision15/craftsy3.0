@@ -1,0 +1,62 @@
+[
+    {
+        "id" : 1,
+        "name" : "Iphone 13",
+        "brand" : "Apple",
+        "price" : 1200,
+        "discount" : 10,
+        "image": "img-phone-01.jpg",
+        "section" : "temporada",
+        "category" : "alta"
+    },
+    {
+        "id" : 2,
+        "name" : "Nokia 1100",
+        "brand" : "Nokia",
+        "price" : 200,
+        "discount" : 0,
+        "image": "img-phone-02.jpg",
+        "section" : "popular",
+        "category" : "baja"
+    },
+    {
+        "id" : 3,
+        "name" : "Samsung S20",
+        "brand" : "Samsung",
+        "price" : 300,
+        "discount" : 5,
+        "image": "img-phone-03.jpg",
+        "section" : "popular",
+        "category" : "alta"
+    },
+    {
+        "id" : 4,
+        "name" : "Xiaomi Redmi Note",
+        "brand" : "Xiaomi",
+        "price" : 250,
+        "discount" : 5,
+        "image": "img-phone-01.jpg",
+        "section" : "temporada",
+        "category" : "media"
+    },
+    {
+        "id" : 5,
+        "name" : "Motorola X-Play",
+        "brand" : "Motorola",
+        "price" : 250,
+        "discount" : 10,
+        "image": "img-phone-02.jpg",
+        "section" : "temporada",
+        "category" : "media"
+    },
+    {
+        "id" : 6,
+        "name" : "Motorola G5",
+        "brand" : "Motorola",
+        "price" : 150,
+        "discount" : 20,
+        "image": "img-phone-03.jpg",
+        "section" : "popular",
+        "category" : "media"
+    }
+]

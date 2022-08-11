@@ -39,63 +39,19 @@
     <main class="home__main">
       
         <section class="home__main__section--products general__main__section">
-            <article class="home__main__section__article--product">
-                
+            <% products.forEach(({id,name,image}) => { %>
+               <article class="home__main__section__article--product">
                 <figure>
-                    <a href="/product-detail">
-                    <img src="/images/img-phone-01.jpg" alt="">
-                </a>
+                    <a href="/product-detail"><img src="/images/<%= image %>" alt=""></a>
                 </figure>
-                <h2>Nombre del producto</h2>
+                <h2><%= name %> </h2>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi quia, eius autem veniam accusantium
                     maiores doloribus aliquid possimus quae debitis?</p>
-                <a class="general__button__product " href="/product-detail">ver más</a>
+                <a class="general__button__product " href="/products/detail/<%= id %>">ver más</a>
             </article>
-            <article class="home__main__section__article--product">
-                <figure>
-                    <img src="/images/img-phone-02.jpg" alt="">
-                </figure>
-                <h2>Nombre del producto</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi quia, eius autem veniam accusantium
-                    maiores doloribus aliquid possimus quae debitis?</p>
-                <a class="general__button__product " href="">ver más</a>
-            </article>
-            <article class="home__main__section__article--product">
-                <figure>
-                    <img src="/images/img-phone-03.jpg" alt="">
-                </figure>
-                <h2>Nombre del producto</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi quia, eius autem veniam accusantium
-                    maiores doloribus aliquid possimus quae debitis?</p>
-                <a class="general__button__product " href="">ver más</a>
-            </article>
-            <article class="home__main__section__article--product">
-                <figure>
-                    <img src="/images/img-phone-01.jpg" alt="">
-                </figure>
-                <h2>Nombre del producto</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi quia, eius autem veniam accusantium
-                    maiores doloribus aliquid possimus quae debitis?</p>
-                <a class="general__button__product " href="">ver más</a>
-            </article>
-            <article class="home__main__section__article--product">
-                <figure>
-                    <img src="/images/img-phone-02.jpg" alt="">
-                </figure>
-                <h2>Nombre del producto</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi quia, eius autem veniam accusantium
-                    maiores doloribus aliquid possimus quae debitis?</p>
-                <a class="general__button__product " href="">ver más</a>
-            </article>
-            <article class="home__main__section__article--product">
-                <figure>
-                    <img src="/images/img-phone-03.jpg" alt="">
-                </figure>
-                <h2>Nombre del producto</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi quia, eius autem veniam accusantium
-                    maiores doloribus aliquid possimus quae debitis?</p>
-                <a class="general__button__product " href="">ver más</a>
-            </article>
+            <% }) %>
+          
+          
             <article class="home__main__section__article--carousel">
                 <div class="glider-contain">
                     <div class="glider">

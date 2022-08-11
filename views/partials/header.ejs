@@ -5,15 +5,11 @@
     <button class="home__header__burger" onclick="document.querySelector('.home__header__nav').classList.toggle('show')"><i class="fa fa-bars"></i> Menu </button>        <nav class="home__header__nav">
         <ul class="home__header__nav--menu">
             <li>
-                <a href="">Computadoras</a>
+                <a href="/products/filter?section=popular">Populares</a>
                 <hr>
             </li>
             <li>
-                <a href="">Tablets</a>
-                <hr>
-            </li>
-            <li>
-                <a href="">Celulares</a>
+                <a href="/products/filter?section=temporada">Temporada</a>
                 <hr>
             </li>
         </ul>
@@ -28,8 +24,8 @@
             </li>
         </ul>
     </nav>
-    <form action="" class="home__header__form--search">
-        <input type="text">
+    <form action="/products/search" class="home__header__form--search" method="GET">
+        <input type="text" name="keywords">
         <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
     </form>
 </header>
