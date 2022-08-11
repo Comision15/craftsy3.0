@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('./partials/head',{ title : 'Agregar producto' }) %>
+
+
+    <body class="register">
+        <%- include('./partials/header') %>
+
+        <main class="register__main">
+            <section class="register__main__section general__main__section">
+                <h1 class="form__title">Agregar producto</h1>
+                    <form action="" class="row" method="POST">
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="name" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="name" name="name">
+                        </div>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="price" class="form-label">Precio</label>
+                            <input type="number" class="form-control" id="price" name="price">
+                        </div>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="discount" class="form-label">Descuento</label>
+                            <input type="number" class="form-control" id="discount" name="discount">
+                        </div>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="brand" class="form-label">Marca</label>
+                            <select class="form-select" aria-label="Default select example" id="brand" name="brand">
+                                <option value="" selected hidden>Seleccione...</option>
+                                <% brands.forEach(brand => { %>
+                                  <option value="<%= brand %>"><%= brand %></option>
+                                <% }) %>
+                              </select>
+                        </div>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="category" class="form-label">Categoría</label>
+                            <select class="form-select" aria-label="Default select example" id="category" name="category">
+                                <option value="" selected hidden>Seleccione...</option>
+                                <option value="alta">Alta</option>
+                                <option value="media">Media</option>
+                                <option value="baja">Baja</option>
+
+                              </select>
+                        </div>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="section" class="form-label">Sección</label>
+                            <select class="form-select" aria-label="Default select example" id="section" name="section">
+                                <option value="" selected hidden>Seleccione...</option>
+                                <option value="popular">Popular</option>
+                                <option value="temporada">Temporada</option>
+                              </select>
+                        </div>
+
+                       
+                        <div class="form__box form__box--flex ">
+                            <a href="/" class="form__button form__button--cancel">Cancelar</a>
+                            <button class="form__button form__button--send" type="submit">Guardar</button>
+                        </div>
+                    </form>
+                </section>
+            </main>
+    </body>
+
+</html>

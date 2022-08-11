@@ -1,6 +1,34 @@
-const products = require('../data/productsModule').loadProducts();
+const products = require('../data/db_Module').loadProducts();
+const brands = require('../data/db_Module').loadBrands();
+const {storeProducts} = require('../data/db_Module')
 
 module.exports = {
+    add : (req,res) => {
+        return res.render('productAdd',{
+            brands: brands.sort()
+        })
+    },
+    store : (req,res) => {
+
+        const {name,price,discount} = req.body;
+        const id = products[products.length - 1].id;
+
+        const newProduct = {
+            id : id + 1,
+            ...req.body,
+            name: name.trim(),
+            price : +price,
+            discount : +discount,
+            image : "img-phone-01.jpg"
+        }
+
+        const productsNew = [...products,newProduct];
+
+        storeProducts(productsNew)
+
+        return res.redirect('/')
+
+    },
     detail : (req,res) => {
 
         const product = products.find(product => product.id === +req.params.id);
