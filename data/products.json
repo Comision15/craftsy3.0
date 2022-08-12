@@ -78,15 +78,5 @@
       "category": "alta",
       "section": "popular",
       "image": "img-phone-01.jpg"
-   },
-   {
-      "id": 9,
-      "name": "ericPhone",
-      "price": 120,
-      "discount": 50,
-      "brand": "Apple",
-      "category": "media",
-      "section": "popular",
-      "image": "img-phone-01.jpg"
    }
 ]

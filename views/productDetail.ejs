@@ -33,7 +33,13 @@
                 <% } %>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi quia, eius autem veniam accusantium
                     maiores doloribus aliquid possimus quae debitis?</p>
-                <a class="general__button__product " href="/products/edit/<%= product.id %>">Editar</a>
+                    <div class="d-flex gap-2 justify-content-end">
+                        <a class="btn btn-success " href="/products/edit/<%= product.id %>">Editar</a>
+                        <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
+                            <button class="btn btn-danger " type="submit">Eliminar</button>
+                        </form>
+                    </div>
+              
             </div>
         </section>
     </main>

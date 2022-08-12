@@ -89,5 +89,14 @@ module.exports = {
             products : result,
             keywords : req.query.keywords
         })
+    },
+    remove : (req,res) => {
+        const products = loadProducts();
+
+        const productsModify = products.filter(product => product.id !== +req.params.id )
+        storeProducts(productsModify);
+        
+        return res.redirect('/')
+
     }
 }
