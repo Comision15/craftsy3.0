@@ -24,10 +24,10 @@
       "name": "Samsung S20",
       "brand": "Samsung",
       "price": 300,
-      "discount": 5,
+      "discount": 50,
       "image": "img-phone-03.jpg",
-      "section": "popular",
-      "category": "alta"
+      "section": "temporada",
+      "category": "baja"
    },
    {
       "id": 4,
@@ -76,6 +76,16 @@
       "discount": 15,
       "brand": "Apple",
       "category": "alta",
+      "section": "popular",
+      "image": "img-phone-01.jpg"
+   },
+   {
+      "id": 9,
+      "name": "ericPhone",
+      "price": 120,
+      "discount": 50,
+      "brand": "Apple",
+      "category": "media",
       "section": "popular",
       "image": "img-phone-01.jpg"
    }

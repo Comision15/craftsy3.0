@@ -10,7 +10,7 @@
         <main class="register__main">
             <section class="register__main__section general__main__section">
                 <h1 class="form__title">Editar producto</h1>
-                    <form action="" class="row" method="POST">
+                    <form action="/products/update/<%= product.id %>?_method=PUT" class="row" method="POST">
                         <div class="col-12 col-md-6 mb-3">
                             <label for="name" class="form-label">Nombre</label>
                             <input type="text" class="form-control" id="name" name="name" value="<%= product.name %>">
