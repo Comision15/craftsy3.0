@@ -5,7 +5,7 @@
       "brand": "Apple",
       "price": 1200,
       "discount": 10,
-      "image": "img-phone-01.jpg",
+      "images": ["img-phone-01.jpg"],
       "section": "temporada",
       "category": "alta"
    },
@@ -15,7 +15,7 @@
       "brand": "Nokia",
       "price": 200,
       "discount": 0,
-      "image": "img-phone-02.jpg",
+      "images": ["img-phone-02.jpg"],
       "section": "popular",
       "category": "baja"
    },
@@ -25,7 +25,7 @@
       "brand": "Samsung",
       "price": 300,
       "discount": 50,
-      "image": "img-phone-03.jpg",
+      "images": ["img-phone-03.jpg"],
       "section": "temporada",
       "category": "baja"
    },
@@ -35,7 +35,7 @@
       "brand": "Xiaomi",
       "price": 250,
       "discount": 5,
-      "image": "img-phone-01.jpg",
+      "images": ["img-phone-01.jpg"],
       "section": "temporada",
       "category": "media"
    },
@@ -45,7 +45,7 @@
       "brand": "Motorola",
       "price": 250,
       "discount": 10,
-      "image": "img-phone-02.jpg",
+      "images": ["img-phone-02.jpg"],
       "section": "temporada",
       "category": "media"
    },
@@ -55,7 +55,7 @@
       "brand": "Motorola",
       "price": 150,
       "discount": 20,
-      "image": "img-phone-03.jpg",
+      "images": ["img-phone-03.jpg"],
       "section": "popular",
       "category": "media"
    },
@@ -67,7 +67,7 @@
       "brand": "Samsung",
       "category": "alta",
       "section": "popular",
-      "image": "img-phone-01.jpg"
+      "images": ["img-phone-01.jpg"]
    },
    {
       "id": 8,
@@ -77,6 +77,6 @@
       "brand": "Apple",
       "category": "alta",
       "section": "popular",
-      "image": "img-phone-01.jpg"
+      "images": ["img-phone-01.jpg"]
    }
 ]

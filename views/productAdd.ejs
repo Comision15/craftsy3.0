@@ -10,7 +10,7 @@
         <main class="register__main">
             <section class="register__main__section general__main__section">
                 <h1 class="form__title">Agregar producto</h1>
-                    <form action="" class="row" method="POST">
+                    <form action="" class="row" method="POST" enctype="multipart/form-data">
                         <div class="col-12 col-md-6 mb-3">
                             <label for="name" class="form-label">Nombre</label>
                             <input type="text" class="form-control" id="name" name="name">
@@ -49,6 +49,10 @@
                                 <option value="popular">Popular</option>
                                 <option value="temporada">Temporada</option>
                               </select>
+                        </div>
+                        <div class="col-12 col-md-6 mb-3">
+                            <label for="image" class="form-label">Imagenes</label>
+                           <input id="image" type="file" name="images" class="form-control" multiple>
                         </div>
 
                        

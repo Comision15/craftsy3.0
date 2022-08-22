@@ -12,7 +12,7 @@
     <main class="register__main">
         <section class="register__main__section general__main__section">
           <h1 class="form__title">Mi Perfil</h1>
-          <form action="" class="form">
+          <form action="/users/update/1?_method=PUT" class="form" enctype="multipart/form-data" method="POST">
                 <div class="form__box">
                     <label class="form__label" for="nombre">Nombre:</label>
                     <input class="form__input" type="text" id="nombre" autocomplete="off" name="firstName" value="mi nombre">
@@ -64,7 +64,7 @@
                     <h5 class="form__subTitle">Acerca de mí</h5>
                     <textarea class="form__textarea" name="about" id="about" cols="30" rows="5"></textarea>
                     <label class="form__button form__button--cancel" for="avatar">Seleccione un imagen</label>
-                    <input hidden class="form__input" type="file" id="avatar" name="avatar" >
+                    <input hidden class="form__input" type="file" id="avatar" name="avatar">
                 </div>
                 <div class="form__box form__box--flex ">
                     <a href="" class="form__button form__button--cancel">Cancelar</a>

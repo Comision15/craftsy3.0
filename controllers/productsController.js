@@ -8,6 +8,7 @@ module.exports = {
         })
     },
     store : (req,res) => {
+        return res.send(req.files)
         const products = loadProducts();
         const {name,price,discount} = req.body;
         const id = products[products.length - 1].id;
