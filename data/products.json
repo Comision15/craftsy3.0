@@ -5,7 +5,9 @@
       "brand": "Apple",
       "price": 1200,
       "discount": 10,
-      "images": ["img-phone-01.jpg"],
+      "images": [
+         "img-phone-01.jpg"
+      ],
       "section": "temporada",
       "category": "alta"
    },
@@ -15,7 +17,9 @@
       "brand": "Nokia",
       "price": 200,
       "discount": 0,
-      "images": ["img-phone-02.jpg"],
+      "images": [
+         "img-phone-02.jpg"
+      ],
       "section": "popular",
       "category": "baja"
    },
@@ -25,7 +29,9 @@
       "brand": "Samsung",
       "price": 300,
       "discount": 50,
-      "images": ["img-phone-03.jpg"],
+      "images": [
+         "img-phone-03.jpg"
+      ],
       "section": "temporada",
       "category": "baja"
    },
@@ -35,7 +41,9 @@
       "brand": "Xiaomi",
       "price": 250,
       "discount": 5,
-      "images": ["img-phone-01.jpg"],
+      "images": [
+         "img-phone-01.jpg"
+      ],
       "section": "temporada",
       "category": "media"
    },
@@ -45,7 +53,9 @@
       "brand": "Motorola",
       "price": 250,
       "discount": 10,
-      "images": ["img-phone-02.jpg"],
+      "images": [
+         "img-phone-02.jpg"
+      ],
       "section": "temporada",
       "category": "media"
    },
@@ -55,7 +65,9 @@
       "brand": "Motorola",
       "price": 150,
       "discount": 20,
-      "images": ["img-phone-03.jpg"],
+      "images": [
+         "img-phone-03.jpg"
+      ],
       "section": "popular",
       "category": "media"
    },
@@ -67,7 +79,9 @@
       "brand": "Samsung",
       "category": "alta",
       "section": "popular",
-      "images": ["img-phone-01.jpg"]
+      "images": [
+         "img-phone-01.jpg"
+      ]
    },
    {
       "id": 8,
@@ -77,6 +91,34 @@
       "brand": "Apple",
       "category": "alta",
       "section": "popular",
-      "images": ["img-phone-01.jpg"]
+      "images": [
+         "img-phone-01.jpg"
+      ]
+   },
+   {
+      "id": 9,
+      "name": "Nuevo producto 1",
+      "price": 1290,
+      "discount": 10,
+      "description": "dsfasdfasdfasd asdfasdf asdfa",
+      "brand": "Motorola",
+      "category": "Alta",
+      "section": "Popular",
+      "images": [
+         "product-1661395814725.jpg"
+      ]
+   },
+   {
+      "id": 10,
+      "name": "Producto 2",
+      "price": 1200,
+      "discount": 30,
+      "description": "sdfasdfd fasd sadfsad fasdf asdfsdaf",
+      "brand": "Motorola",
+      "category": "Baja",
+      "section": "Popular",
+      "images": [
+         "default-image.png"
+      ]
    }
 ]

@@ -1,32 +1,54 @@
-const {loadProducts, loadBrands, storeProducts} = require('../data/db_Module');
+const {loadProducts, loadBrands,loadCategories, loadSections, storeProducts} = require('../data/db_Module');
+const {validationResult} = require('express-validator')
 
 module.exports = {
     add : (req,res) => {
         const brands = loadBrands();
         return res.render('productAdd',{
-            brands: brands.sort()
+            brands: brands.sort(),
+            categories : loadCategories().sort(),
+            sections : loadSections().sort()
         })
     },
     store : (req,res) => {
-        return res.send(req.files)
-        const products = loadProducts();
-        const {name,price,discount} = req.body;
-        const id = products[products.length - 1].id;
+        const errors = validationResult(req);
 
-        const newProduct = {
-            id : id + 1,
-            ...req.body,
-            name: name.trim(),
-            price : +price,
-            discount : +discount,
-            image : "img-phone-01.jpg"
-        }
+        if(errors.isEmpty()){
+            const products = loadProducts();
+            const {name,price,discount, brand, section, category, description} = req.body;
+            const id = products[products.length - 1].id;
+            let images;
+            if(req.files.length > 0){
+                images = req.files.map(image => image.filename)
+            }
 
-        const productsNew = [...products,newProduct];
+            const newProduct = {
+                id : id + 1,
+                ...req.body,
+                name: name.trim(),
+                price : +price,
+                discount : +discount,
+                description : description.trim(),
+                images : images ? images : ['default-image.png']
+            }
+
+            const productsNew = [...products,newProduct];
 
         storeProducts(productsNew)
 
-        return res.redirect('/')
+        return res.redirect('/');
+
+        }else{
+            const brands = loadBrands();
+            return res.render('productAdd',{
+                brands: brands.sort(),
+                categories : loadCategories().sort(),
+                sections : loadSections().sort(),
+                errors : errors.mapped(),
+                old : req.body
+            })
+        }
+     
 
     },
     edit : (req,res) => {
