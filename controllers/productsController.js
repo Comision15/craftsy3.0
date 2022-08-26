@@ -1,5 +1,7 @@
 const {loadProducts, loadBrands,loadCategories, loadSections, storeProducts} = require('../data/db_Module');
-const {validationResult} = require('express-validator')
+const {validationResult} = require('express-validator');
+const fs = require('fs');
+const path = require('path');
 
 module.exports = {
     add : (req,res) => {
@@ -11,9 +13,18 @@ module.exports = {
         })
     },
     store : (req,res) => {
-        const errors = validationResult(req);
+        let errors = validationResult(req);
+        errors = errors.mapped();
+        if(req.fileValidationError){
+            errors = {
+                ...errors,
+                images : {
+                    msg : req.fileValidationError
+                }
+            }
+        }
 
-        if(errors.isEmpty()){
+        if(Object.entries(errors).length === 0){
             const products = loadProducts();
             const {name,price,discount, brand, section, category, description} = req.body;
             const id = products[products.length - 1].id;
@@ -39,25 +50,29 @@ module.exports = {
         return res.redirect('/');
 
         }else{
-            const brands = loadBrands();
+            if(req.files.length > 0){
+                req.files.forEach(({filename}) => {
+                    fs.existsSync(path.resolve(__dirname,'..','public','images','celulares',filename)) &&  fs.unlinkSync(path.resolve(__dirname,'..','public','images','celulares',filename))
+                })
+            }
             return res.render('productAdd',{
-                brands: brands.sort(),
+                brands: loadBrands().sort(),
                 categories : loadCategories().sort(),
                 sections : loadSections().sort(),
-                errors : errors.mapped(),
+                errors,
                 old : req.body
             })
         }
      
-
     },
     edit : (req,res) => {
         const products = loadProducts();
-        const brands = loadBrands();
         const product = products.find(product => product.id === +req.params.id);
 
         return res.render('productEdit',{
-            brands,
+            brands :loadBrands().sort(),
+            sections : loadSections().sort(),
+            categories : loadCategories().sort(),
             product
         })
     },
@@ -65,25 +80,40 @@ module.exports = {
 
         const products = loadProducts();
         const {id} = req.params;
-        const {name,price,discount,brand, category, section} = req.body;
+        let errors = validationResult(req);
 
-        const productsModify = products.map(product => {
-            if (product.id === +id ){
-                return {
-                    ...product,
-                    name : name.trim(),
-                    price : +price,
-                    discount : +discount,
-                    brand,
-                    category,
-                    section 
+        if(errors.isEmpty()){
+            const {name,price,discount,brand, category, section} = req.body;
+
+            const productsModify = products.map(product => {
+                if (product.id === +id ){
+                    return {
+                        ...product,
+                        name : name.trim(),
+                        price : +price,
+                        discount : +discount,
+                        brand,
+                        category,
+                        section 
+                    }
                 }
-            }
-            return product
-        })
+                return product
+            })
+    
+            storeProducts(productsModify)
+            return res.redirect('/products/detail/' + req.params.id)
+        }else {
 
-        storeProducts(productsModify)
-        return res.redirect('/products/detail/' + req.params.id)
+            return res.render('productEdit',{
+                brands :loadBrands().sort(),
+                sections : loadSections().sort(),
+                categories : loadCategories().sort(),
+                product : loadProducts().find(product => product.id === +req.params.id),
+                errors : errors.mapped()
+            })
+        }
+
+       
 
        
     },

@@ -27,7 +27,6 @@ module.exports = [
         .notEmpty().withMessage('La descripción es obligatoria').bail()
         .isLength({
             min : 20,
-            max : 200
         }).withMessage('Cómo mínimo 5 caracteres'),
 
     check('brand')
