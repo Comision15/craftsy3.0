@@ -1,0 +1,17 @@
+[
+   {
+      "id": 1,
+      "firstName": "Eric",
+      "lastName": "Mena",
+      "email": "menaericdaniel@gmail.com",
+      "password": "$2a$10$A45m/wEFen/gSAHQneby1uauixL5OwBvfjKqoprzxh7sOZUpjcnHm",
+      "rol": "user",
+      "avatar": null,
+      "gender": null,
+      "hobbies": [],
+      "address": null,
+      "city": null,
+      "province": null,
+      "about": null
+   }
+]
