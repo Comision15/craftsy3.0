@@ -59,6 +59,13 @@ module.exports = {
                 rol,
                 avatar
             }
+
+            if(req.body.remember){
+                res.cookie('userCraftsy15',req.session.userLogin,{
+                    maxAge : 1000 * 60
+                })
+            }
+
             return res.redirect('/')
         }else {
             return res.render('login',{
