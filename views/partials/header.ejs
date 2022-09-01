@@ -14,10 +14,22 @@
             </li>
         </ul>
         <ul class="home__header__nav--user">
-            <li>
-                <a href="/products/add">Agregar</a>
-                <hr>
-            </li>
+            <% if (locals.userLogin) { %>
+                <li>
+                    <a href="/users/profile"><%= userLogin.firstName %></a>
+                    <hr>
+                </li>
+                <li>
+                    <a href="/users/logout">Salir</a>
+                    <hr>
+                </li>
+                <% if (userLogin.rol === "admin") { %>
+                    <li>
+                        <a href="/products/add">Agregar</a>
+                        <hr>
+                    </li>
+                <% } %>
+            <% }else{ %>
             <li>
                 <a href="/users/login">Login</a>
                 <hr>
@@ -26,6 +38,7 @@
                 <a href="/users/register">Registro</a>
                 <hr>
             </li>
+            <% } %>
         </ul>
     </nav>
     <form action="/products/search" class="home__header__form--search" method="GET">

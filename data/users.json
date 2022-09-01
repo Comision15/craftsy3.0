@@ -6,12 +6,13 @@
       "email": "menaericdaniel@gmail.com",
       "password": "$2a$10$A45m/wEFen/gSAHQneby1uauixL5OwBvfjKqoprzxh7sOZUpjcnHm",
       "rol": "user",
+      "birthday": "1996-03-03",
       "avatar": null,
       "gender": null,
       "hobbies": [],
-      "address": null,
-      "city": null,
-      "province": null,
-      "about": null
+      "address": "",
+      "city": "",
+      "province": "",
+      "about": ""
    }
 ]

@@ -70,7 +70,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
     font-size: 13px;
     margin-top: 10px;
     text-align: center;
-    color: var(--colorRojo);
+    color: darkblue;
 }
 
 .form__text--error {

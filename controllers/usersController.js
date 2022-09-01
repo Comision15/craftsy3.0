@@ -20,6 +20,7 @@ module.exports = {
                 email : email.trim(),
                 password : bcryptjs.hashSync(password.trim(),10),
                 rol : 'user',
+                birthday : null,
                 avatar : null,
                 gender : null,
                 hobbies : [],
@@ -39,16 +40,62 @@ module.exports = {
                 old : req.body
             })
         }
-
-    
     },
     login : (req,res) => {
         return res.render('login')
     },
+    processLogin : (req,res) => {
+        let errors = validationResult(req);
+
+        if(errors.isEmpty()){
+
+            let {id, firstName, rol, avatar} = loadUsers().find(user => user.email === req.body.email);
+
+            req.session.userLogin = {
+                id,
+                firstName,
+                rol,
+                avatar
+            }
+            return res.redirect('/')
+        }else {
+            return res.render('login',{
+                errors : errors.mapped()
+            })
+        }
+    },
     profile : (req,res) => {
-        return res.render('profile')
+        let user = loadUsers().find(user => user.id === req.session.userLogin.id);
+        return res.render('profile', {
+            user,
+            cities : require('../data/cities'),
+            provinces : require('../data/provinces')
+        })
     },
     update : (req, res) => {
-        return res.send(req.file)
+
+        const {firstName, lastName, birthday, address, city, province, about} = req.body;
+
+        let usersModify = loadUsers().map(user => {
+            if(user.id === +req.params.id){
+                return {
+                    ...user,
+                    ...req.body
+                }
+            }
+            return user
+        });
+
+        req.session.userLogin = {
+            ...req.session.userLogin,
+            firstName
+        }
+
+        storeUsers(usersModify);
+        return res.redirect('/users/profile')
+    },
+    logout : (req,res) => {
+        req.session.destroy()
+        return res.redirect('/')
     }
 }

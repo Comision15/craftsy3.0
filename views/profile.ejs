@@ -12,28 +12,28 @@
     <main class="register__main">
         <section class="register__main__section general__main__section">
           <h1 class="form__title">Mi Perfil</h1>
-          <form action="/users/update/1?_method=PUT" class="form" enctype="multipart/form-data" method="POST">
+          <form action="/users/update/<%= user.id %>?_method=PUT" class="form" enctype="multipart/form-data" method="POST">
                 <div class="form__box">
                     <label class="form__label" for="nombre">Nombre:</label>
-                    <input class="form__input" type="text" id="nombre" autocomplete="off" name="firstName" value="mi nombre">
+                    <input class="form__input" type="text" id="nombre" autocomplete="off" name="firstName" value="<%= user.firstName %>">
                 </div>
                 <div class="form__box">
                     <label class="form__label" for="apellido">Apellido:</label>
-                    <input class="form__input" type="text" id="apellido" name="lastName" value="mi apellido">
+                    <input class="form__input" type="text" id="apellido" name="lastName" value="<%= user.lastName %>">
                 </div>
                 <div class="form__box">
                     <label class="form__label" for="email">Email:</label>
-                    <input class="form__input" type="email" id="email" name="email" value="mi email">
+                    <input class="form__input" type="email" id="email" name="email" value="<%= user.email %>" readonly>
                 </div>
                 <div class="form__box">
                     <label class="form__label" for="date">Fecha de nacimiento:</label>
-                    <input class="form__input" type="date" id="date" name="birthday" value="1976-03-03">
+                    <input class="form__input" type="date" id="date" name="birthday" value="<%= user.birthday%>">
                 </div>
                 <div class="form__box form__box--column">
                     <h5 class="form__subTitle">Género</h5>
-                     <label for="masculino"><input class="form__input--radio" value="m" type="radio" id="masculino" name="gender"> Masculino</label>
-                     <label for="femenino"><input class="form__input--radio" value="f" type="radio" id="femenino" name="gender"> Femenino</label>
-                    <label for="otro"><input class="form__input--radio" value="o" type="radio" id="otro" name="gender"> Otro</label>
+                     <label for="masculino"><input class="form__input--radio" <%= user.gender === "m" && 'checked' %>  value="m" type="radio" id="masculino" name="gender"> Masculino</label>
+                     <label for="femenino"><input class="form__input--radio" <%= user.gender === "f" && 'checked' %> value="f" type="radio" id="femenino" name="gender"> Femenino</label>
+                    <label for="otro"><input class="form__input--radio" value="o" <%= user.gender === "o" && 'checked' %> type="radio" id="otro" name="gender"> Otro</label>
                 </div>
                 <div class="form__box form__box--column">
                     <h5 class="form__subTitle">Hobbies</h5>
@@ -44,20 +44,19 @@
                 <div class="form__box form__box--column">
                     <h5 class="form__subTitle">Domicilio</h5>
                         <label class="form__label" for="direccion">Calle y altura:</label>
-                        <input class="form__input" type="text" id="direccion" name="address" value="Siempre viva 123">
+                        <input class="form__input" type="text" id="direccion" name="address" value="<%= user.address %>">
 
                     <select class="form__select" name="city" id="city">
                         <option value="" hidden selected>Seleccione su ciudad...</option>
-                        <option value="buenos aires">Buenos Aires</option>
-                        <option value="cutral-co">Cutral-Có</option>
-                        <option value="san pedro">San Pedro</option>
-                        <option value="plaza huincul">Plaza Huincul</option>
+                        <% cities.forEach(city => { %>
+                            <option <%= city === user.city && 'selected'%>  value="<%= city %>"><%= city %></option>
+                        <% }) %>
                     </select>
                     <select class="form__select" name="province" id="province">
                         <option value="" hidden selected>Seleccione su provincia...</option>
-                        <option value="neuquen">Neuquén</option>
-                        <option value="buenos aires">Buenos Aires</option>
-                        <option value="jujuy">Jujuy</option>
+                        <% provinces.forEach(province => { %>
+                            <option <%= province === user.province && 'selected' %> value="<%= province %>"><%= province %></option>
+                        <% }) %>
                     </select>
                 </div>
                 <div class="form__box form__box--column">

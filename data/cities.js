@@ -1,0 +1,1 @@
+module.exports = ['Loma Hermosa', 'Cutral-có','Plaza Huincul','San Miguel'];
