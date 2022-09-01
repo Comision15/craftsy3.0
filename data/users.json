@@ -14,5 +14,21 @@
       "city": "",
       "province": "",
       "about": ""
+   },
+   {
+      "id": 2,
+      "firstName": "Usuario",
+      "lastName": "craftsy",
+      "email": "user@craftsy15.com",
+      "password": "$2a$10$KYmmgRvtbWvsA61NxamIruLb/i4f4.D93CS9UmAbUJJAwg2D0qHb.",
+      "rol": "user",
+      "birthday": "2022-09-21",
+      "avatar": "avatar-1662072621801.jpg",
+      "gender": "m",
+      "hobbies": "aire libre",
+      "address": "Siempre viva 1234",
+      "city": "San Miguel",
+      "province": "Buenos Aires",
+      "about": "sin comentarios"
    }
 ]

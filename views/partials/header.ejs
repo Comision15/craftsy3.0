@@ -15,7 +15,8 @@
         </ul>
         <ul class="home__header__nav--user">
             <% if (locals.userLogin) { %>
-                <li>
+                <li class="d-flex flex-column align-items-center">
+                    <img style="border-radius: 50%;" src="/images/users/<%= userLogin.avatar ? userLogin.avatar : 'default.png' %>" width="30px" alt="avatar">
                     <a href="/users/profile"><%= userLogin.firstName %></a>
                     <hr>
                 </li>

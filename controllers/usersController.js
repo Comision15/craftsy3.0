@@ -1,6 +1,8 @@
 const {loadUsers, storeUsers} = require('../data/db_Module');
 const {validationResult} = require('express-validator');
 const bcryptjs = require('bcryptjs');
+const fs = require('fs');
+const path = require('path');
 
 module.exports = {
     register : (req,res) => {
@@ -80,15 +82,24 @@ module.exports = {
             if(user.id === +req.params.id){
                 return {
                     ...user,
-                    ...req.body
+                    ...req.body,
+                    avatar : req.file ? req.file.filename : req.session.userLogin.avatar
                 }
             }
             return user
         });
 
+        if(req.file && req.session.userLogin.avatar){
+            if(fs.existsSync(path.resolve(__dirname,'..','public','images','users',req.session.userLogin.avatar))){
+                console.log('>>>>>>>>>>',req.session.userLogin.avatar);
+                fs.unlinkSync(path.resolve(__dirname,'..','public','images','users',req.session.userLogin.avatar))
+            }
+        }
+    
         req.session.userLogin = {
             ...req.session.userLogin,
-            firstName
+            firstName,
+            avatar : req.file ? req.file.filename : req.session.userLogin.avatar
         }
 
         storeUsers(usersModify);
