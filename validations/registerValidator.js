@@ -1,3 +1,4 @@
+const moment = require('moment');
 const {check, body} = require('express-validator');
 const {loadUsers} = require('../data/db_Module');
 
@@ -44,6 +45,7 @@ module.exports = [
             }
             return true
         }).withMessage('Las contraseñas no coinciden'),
+    check('birthday').isBefore(moment().subtract(18, 'year').format('Y-M-D')).withMessage('Debes ser mayor de edad'),
     
     check('terms')
         .isString('on').withMessage('Debes aceptar los términos y condiciones')

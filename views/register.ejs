@@ -44,6 +44,13 @@
 
                 </div>
                 <div class="form__box">
+                    <label class="form__label" for="birthday">Fecha de nacimiento</label>
+                    <input class="form__input" type="date" id="birthday" name="birthday" value="<%= locals.old && old.birthday ? old.birthday : null %>">
+                    <small class="form__text--error"></small>
+                    <small class="form__text--error"><%= locals.errors && errors.birthday ? errors.birthday.msg :null %></small>
+
+                </div>
+                <div class="form__box">
                     <div class="form__box--column ">
                         <div class="form__box--flex">
                             <input class="form__checkbox" type="checkbox" id="terminos" name="terms">

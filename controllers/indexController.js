@@ -1,4 +1,6 @@
-const {loadProducts} = require('../data/db_Module')
+const db = require('../database/models');
+
+const {loadProducts} = require('../data/db_Module');
 
 module.exports = {
   index: (req, res) => {
