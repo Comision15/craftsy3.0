@@ -20,8 +20,8 @@
       "images": [
          "img-phone-02.jpg"
       ],
-      "section": "Popular",
-      "category": "Alta"
+      "section": "popular",
+      "category": "alta"
    },
    {
       "id": 3,
@@ -38,7 +38,7 @@
    {
       "id": 4,
       "name": "Xiaomi Redmi Note",
-      "brand": "Xiaomi",
+      "brand": "Xioami",
       "price": 250,
       "discount": 5,
       "images": [
@@ -102,8 +102,8 @@
       "discount": 10,
       "description": "dsfasdfasdfasd asdfasdf asdfa",
       "brand": "Motorola",
-      "category": "Alta",
-      "section": "Popular",
+      "category": "alta",
+      "section": "popular",
       "images": [
          "product-1661395814725.jpg"
       ]
@@ -115,8 +115,8 @@
       "discount": 30,
       "description": "sdfasdfd fasd sadfsad fasdf asdfsdaf",
       "brand": "Motorola",
-      "category": "Baja",
-      "section": "Popular",
+      "category": "baja",
+      "section": "popular",
       "images": [
          "default-image.png"
       ]
@@ -128,8 +128,8 @@
       "discount": 10,
       "description": "asdfsadfsda fasdf asdfsa dfasd",
       "brand": "Samsung",
-      "category": "",
-      "section": "",
+      "category": "alta",
+      "section": "temporada",
       "images": [
          "default-image.png"
       ]
